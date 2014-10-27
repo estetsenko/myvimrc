@@ -5,6 +5,7 @@ nmap <F8> :TagbarToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set t_Co=256
 " Theme settings
 let g:solarized_termcolors=256
 let g:rehash256 = 1
@@ -43,7 +44,6 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 call vundle#end()
 
 colorscheme solarized
-set t_Co=256
 filetype plugin indent on
 
 "let g:UltiSnipsExpandTrigger="<c-e>"
