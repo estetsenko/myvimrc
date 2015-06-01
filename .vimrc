@@ -24,7 +24,7 @@ endif
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
@@ -49,17 +49,17 @@ filetype plugin indent on
 
 let g:airline_powerline_fonts = 1
 
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
-function ExpandSnippetOrCarriageReturn()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\<CR>"
-  endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+"let g:UltiSnipsExpandTrigger = "<nop>"
+"let g:ulti_expand_or_jump_res = 0
+"function ExpandSnippetOrCarriageReturn()
+"  let snippet = UltiSnips#ExpandSnippetOrJump()
+"  if g:ulti_expand_or_jump_res > 0
+"    return snippet
+"  else
+"    return "\<CR>"
+"  endif
+"endfunction
+"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 						
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
