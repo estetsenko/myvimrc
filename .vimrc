@@ -1,8 +1,11 @@
 set nocompatible
 filetype off
+syntax on
 
 nmap <F8> :TagbarToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <F2> :GoRun<CR>
+map <silent> <F4> :ccl<CR>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 set t_Co=256
@@ -36,6 +39,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jiangmiao/auto-pairs'
 
 " Themes
 Plugin 'altercation/vim-colors-solarized'
@@ -44,7 +48,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 
 call vundle#end()
 
-colorscheme solarized
+colorscheme molokai
 filetype plugin indent on
 
 let g:airline_powerline_fonts = 1
