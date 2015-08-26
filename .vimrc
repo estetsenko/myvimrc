@@ -9,6 +9,7 @@ map <silent> <F4> :ccl<CR>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 set t_Co=256
+
 " Theme settings
 let g:solarized_termcolors=256
 let g:rehash256 = 1
@@ -20,8 +21,12 @@ set number
 
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 
-  set guioptions -=m 
-  set guioptions -=T
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+
+  let g:airline_powerline_fonts = 1
 endif
 
 call vundle#begin()
@@ -34,8 +39,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
@@ -51,8 +56,6 @@ call vundle#end()
 colorscheme molokai
 filetype plugin indent on
 
-let g:airline_powerline_fonts = 1
-
 "let g:UltiSnipsExpandTrigger = "<nop>"
 "let g:ulti_expand_or_jump_res = 0
 "function ExpandSnippetOrCarriageReturn()
@@ -63,7 +66,7 @@ let g:airline_powerline_fonts = 1
 "    return "\<CR>"
 "  endif
 "endfunction
-"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+"inoremap <expr> <CR> pumvisible() ? "<CR>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 						
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -74,7 +77,7 @@ nmap s <Plug>(easymotion-s)
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
+"nmap s <Plug>(easymotion-s2)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
